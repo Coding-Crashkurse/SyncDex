@@ -34,5 +34,3 @@ uv run python main.py
 ```bash
 uv run python ingest.py
 ```
-
-![Screenshot of the API](api.JPG)
