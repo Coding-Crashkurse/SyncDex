@@ -1,0 +1,18 @@
+[project]
+name = "syncdex"
+version = "0.0.1"
+description = "Index Documents for RAG in batches"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.23",
+    "langchain-chroma>=0.2.2",
+    "langchain-community>=0.3.21",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
