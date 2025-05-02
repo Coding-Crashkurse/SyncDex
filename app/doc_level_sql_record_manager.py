@@ -40,12 +40,15 @@ class DocLevelSQLRecordManager(SQLRecordManager):
     def set_doc_hash(self, doc_id: str, new_hash: str) -> None:
         self.update([doc_id], group_ids=[new_hash])
 
-    def leftover_cleanup(self, run_start_time: float) -> int:
-        leftover_keys = self.list_keys(before=run_start_time)
+    def leftover_cleanup(self, run_start_time: float) -> list[str]:
+        """
+        Löscht alle Keys, die in diesem Sync-Run NICHT angefasst wurden,
+        und gibt IMMER eine Liste zurück (leere Liste falls nichts zu tun).
+        """
+        leftover_keys = self.list_keys(before=run_start_time) or []
         if leftover_keys:
             self.delete_keys(leftover_keys)
-            return len(leftover_keys)
-        return 0
+        return leftover_keys  # ← garantiert list, nie None
 
     def upsert_doc(self, doc_id: str, page_content: str, metadata: dict) -> str:
         new_hash = self.compute_doc_hash(page_content, metadata)

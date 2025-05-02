@@ -24,7 +24,7 @@ class ChunkLevelSyncManager:
             docs_source=chunked,
             record_manager=self.record_manager,
             vector_store=self.vectorstore,
-            cleanup=None,
+            cleanup="incremental",
             source_id_key="source",
             batch_size=10,
             force_update=False,
