@@ -8,6 +8,9 @@ dependencies = [
     "langchain>=0.3.23",
     "langchain-chroma>=0.2.2",
     "langchain-community>=0.3.21",
+    "langchain-core>=0.3.51",
+    "langchain-postgres>=0.0.14",
+    "psycopg[binary]>=3.2.7",
 ]
 
 [tool.hatch.build.targets.wheel]

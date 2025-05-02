@@ -1,5 +1,10 @@
 # Indexing Service (Proof of Concept)
 
+> **Extra Notebook:**  
+> See `upsert_demo.ipynb` for a hands-on walkthrough of PostgreSQL/pgvector
+> UPSERT edge-cases.
+
+
 Minimal FastAPI service for syncing documents and vectorstores with batch processing, leveraging LangChain's Record Manager.
 
 ## Endpoints
