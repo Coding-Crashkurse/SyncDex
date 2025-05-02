@@ -24,5 +24,7 @@ class DocLevelSyncManager:
 
         return {"stats": stats, "changed_ids": changed_ids}
 
+
+
     def leftover_cleanup(self, run_start_time: float) -> List[str]:
         return self.manager.leftover_cleanup(run_start_time)
